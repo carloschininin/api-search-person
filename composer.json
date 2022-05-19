@@ -1,0 +1,22 @@
+{
+    "name": "carloschininin/api-search-person",
+    "description": "Api search person in reniec and sunat",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "CarlosChininin\\ApiSearchPerson\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos Chininin",
+            "email": "carloschininin@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "ext-mbstring": "*",
+        "symfony/http-client": "^6.0"
+    }
+}
