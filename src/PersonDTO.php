@@ -20,6 +20,7 @@ class PersonDTO implements \JsonSerializable
     private ?string $ruc;
     private ?string $estado;
     private ?string $condicion;
+    private ?string $direccion;
 
     public function id(): ?int
     {
@@ -109,6 +110,16 @@ class PersonDTO implements \JsonSerializable
     public function setCondicion(?string $condicion): void
     {
         $this->condicion = $condicion;
+    }
+
+    public function direccion(): ?string
+    {
+        return $this->direccion;
+    }
+
+    public function setDireccion(?string $direccion): void
+    {
+        $this->direccion = $direccion;
     }
 
     public function jsonSerialize(): array

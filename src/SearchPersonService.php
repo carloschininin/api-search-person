@@ -59,6 +59,25 @@ class SearchPersonService
         return $person;
     }
 
+    public function ruc(string $document): ?PersonDTO
+    {
+        $endPoint = SearchEndpoint::RUC.$document;
+        $result = $this->api($endPoint, 'GET');
+        if (false === $result['status']) {
+            return null;
+        }
+
+        $content = $result['data'];
+        $person = new PersonDTO();
+        $person->setRuc($content['numeroDocumento']);
+        $person->setNombreCompleto($content['nombre']);
+        $person->setEstado($content['estado']);
+        $person->setCondicion($content['condicion']);
+        $person->setDireccion($content['direccion']);
+
+        return $person;
+    }
+
     protected function api(string $url, string $method, bool $inArray = true, array $options = []): array
     {
         try {
