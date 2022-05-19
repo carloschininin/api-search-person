@@ -21,6 +21,7 @@ class PersonDTO implements \JsonSerializable
     private ?string $estado;
     private ?string $condicion;
     private ?string $direccion;
+    private ?string $ubigeo;
 
     public function id(): ?int
     {
@@ -120,6 +121,16 @@ class PersonDTO implements \JsonSerializable
     public function setDireccion(?string $direccion): void
     {
         $this->direccion = $direccion;
+    }
+
+    public function ubigeo(): ?string
+    {
+        return $this->ubigeo;
+    }
+
+    public function setUbigeo(?string $ubigeo): void
+    {
+        $this->ubigeo = $ubigeo;
     }
 
     public function jsonSerialize(): array

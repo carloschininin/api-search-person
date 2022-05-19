@@ -74,6 +74,7 @@ class SearchPersonService
         $person->setEstado($content['estado']);
         $person->setCondicion($content['condicion']);
         $person->setDireccion($content['direccion']);
+        $person->setUbigeo($content['ubigeo']);
 
         return $person;
     }
